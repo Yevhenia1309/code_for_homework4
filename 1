@@ -1,0 +1,14 @@
+kv = int (input ('Input the apartment number: '))
+kv_pl = 4
+et = 9
+print (kv > 144 and 'There is no apartment with this number in this building'\
+       or 'There is apartment with this number in this building')
+kv_pod = kv_pl * et  # кількість квартир в одному під'їзді
+pod_x = (kv + kv_pod - 1) // kv_pod  # під'їзд, який ми шукаємо
+et_x = 1 + ((kv - 1) % kv_pod) // kv_pl # поверх, який ми шукаємо
+print(f'Entrance number: {pod_x}')
+print(f'Floor number: {et_x}')
+if kv % 4 == 0: # номер на поверсі, який ми шукаємо. Не знаю, як зробити так, щоб числа кратні 4 давали не 0, а 4.
+    print ('Apartment on the floor number:', 4)
+else:
+    print ('Apartment on the floor number:', kv % 4)
